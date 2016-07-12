@@ -1,6 +1,7 @@
 package com.coolweather.app.util;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -28,24 +29,31 @@ public class HttpUtil {
 				 BufferedReader reader=new BufferedReader(new InputStreamReader(in));
 				 
 				 StringBuilder response=new StringBuilder();
-				
+				 System.out.println("12312打撒打撒321aaaa");
+			
 				 String line;
-				 System.out.println("1231232aaaa2");
+				 //第二次返回weatherCode的是while 这里IO异常 
 				 while((line=reader.readLine())!=null){
+					 
 					 response.append(line);
+					 System.out.println("12312倒萨是打撒打撒321aaaa");
 					 System.out.println(response);
-					
+			
 				 }
+					
 				 if(listener!=null){
-						
+						System.out.println("123adsadsada1232aaaa5");
 					 listener.onFinish(response.toString());
+						System.out.println("1231232aaaa5");
 				 }
 			 }catch(Exception e){
+					System.out.println("1231232aaaa哥哥幅度萨芬5hhhh");
 				 if(listener!=null){
-						System.out.println("1231232aaaa5");
+					 System.out.println("1231232aaaa哥哥幅度萨芬5hdsadsahhh");
 					 listener.onError(e);
 				 }
-			 }finally{
+			 }
+			 finally{
 				 if(connection!=null){
 					 connection.disconnect();
 				 }

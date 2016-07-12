@@ -71,11 +71,11 @@ public class UiUtil {
 	 }
 		public static void handleWeatherResponse(Context context,String response){
 			
-			
+		
 			try {
-
+				System.out.println("9");
 				JSONObject jsonObject=new JSONObject(response);
-				JSONObject wetherInfo=jsonObject.getJSONObject("weatherInfo");
+				JSONObject wetherInfo=jsonObject.getJSONObject("weatherinfo");
 				String cityName=wetherInfo.getString("city");
 				String weatherCode=wetherInfo.getString("cityid");
 				String temp1=wetherInfo.getString("temp1");
